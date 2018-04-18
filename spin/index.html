@@ -61,12 +61,13 @@
                 dataType: "json",
                 url: "http://mockjs",
                 beforeSend: function () {
+                	$("#mb").css("display","block");
                     //异步请求时spinner出现
                     $("#firstDiv").text("");
                     var target = $("#firstDiv").get(0);
                     spinner.spin(target);
-                    //进度                   
-                   // spinner.setProgress(i, 20);
+                    $("#mb").css("display","none");
+   
                 },
                 success: function (msg) {
                     $("#firstDiv").text(msg);
@@ -89,6 +90,7 @@
 		<div id="secondDiv">
 			<input id="btnRequest" type="button" value="请求数据" class="btnStyle" />
 		</div>
+		<div id="mb"></div>
 	</body>
 
 </html>
